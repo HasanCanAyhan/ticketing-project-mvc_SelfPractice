@@ -15,7 +15,7 @@ public class UserController {
     public String createUser(Model model){
 
         model.addAttribute("user", new UserDTO());
-        model.addAttribute("roles", find all roles from db ); // all roles will come from DataBase
+        //model.addAttribute("roles", find all roles from db ); // all roles will come from DataBase
 
         return "/user/create";
     }
