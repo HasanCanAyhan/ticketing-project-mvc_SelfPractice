@@ -9,6 +9,7 @@ public abstract class AbstractMapService <T,ID>{ // Spring Boot design it
 
     public Map<ID,T> map = new HashMap<>(); //DB custom database
 
+    //we can say parent - implementation
     // those implementations are valid for child classes
     // changing is object
 
