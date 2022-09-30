@@ -40,15 +40,18 @@ public class UserController {
 
     //save button -->> post action --->> then we have user object from the UI , then we are holding it with ModelAttribute
     @PostMapping("/create")
-    public String insertUser(@ModelAttribute("user") UserDTO user , Model model){
+    public String insertUser(@ModelAttribute("user") UserDTO user ){
 
         //go to create html and provides whatever needs it (user object, roles, users)
-        model.addAttribute("user",new UserDTO());
-        model.addAttribute("roles", roleService.findAll() );
+        //model.addAttribute("user",new UserDTO());
+        //model.addAttribute("roles", roleService.findAll() );
 
         userService.save(user);
-        model.addAttribute("users", userService.findAll());
-        return "/user/create";
+        //model.addAttribute("users", userService.findAll());
+
+        //return "/user/create";
+
+        return "redirect:/user/create";
     }
 
 
