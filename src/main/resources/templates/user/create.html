@@ -32,7 +32,6 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <!--we need object, this object coming from User Controller class -->
                                     <form action="#" th:object="${user}">
                                         <div class="row">
                                             <div class="col-sm-6 col-md-6">
@@ -101,7 +100,7 @@
                                                     <label>Choose a Role</label>
                                                     <select th:field="*{role}" name="role" class="custom-select">
                                                         <option th:value="''" th:text="Select"></option>
-                                                        <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.getDescription()}"></option>
+                                                        <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.description}"></option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -155,12 +154,12 @@
 
                                             <tbody>
 
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                            <tr th:each="theUser : ${userList}">
+                                                <td th:text="${theUser.firstName + ' ' + theUser.lastName}"></td>
+                                                <td th:text="${theUser.userName}"></td>
+                                                <td th:text="${theUser.gender}"></td>
+                                                <td th:text="${theUser.phone}"></td>
+                                                <td th:text="${theUser.role.description}"></td>
                                                 <td class="actions">
                                                     <a href="#"><button type="button" class="btn btn-warning btn-sm">Update</button></a>
                                                     <a href="#" class="delete-row"><button type="button" class="btn btn-secondary btn-sm">Delete</button></a>
