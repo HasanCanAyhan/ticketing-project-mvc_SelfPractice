@@ -14,7 +14,7 @@ public class User extends BaseEntity {
     private String lastName;
     private String userName;
     private String passWord;
-    private boolean enabled;
+    private boolean enabled; // for security, when we create user , to confirm
     private String phone;
     private Role role;
     private Gender gender;

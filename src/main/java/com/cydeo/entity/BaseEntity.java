@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BaseEntity {
 
+    //who create, creation time etc... information for user, manager etc...
     private Long id;
     private LocalDateTime insertDateTime;
     private Long insertUserId;
