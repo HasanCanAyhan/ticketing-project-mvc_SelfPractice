@@ -4,7 +4,9 @@ import java.util.List;
 
 public interface CrudService<T,ID> {
 
-    // common methods for all interfaces
+    // common methods for all interfaces/ services
+
+    // create, save , read, update, find, delete certain things
 
 
     T save(T user);

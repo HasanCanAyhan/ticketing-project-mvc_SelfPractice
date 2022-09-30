@@ -7,6 +7,8 @@ import java.util.List;
 
 public class RoleServiceImpl extends AbstractMapService<RoleDTO,Long> implements RoleService {
 
+    // super keyword comes from parent which is AbstractMapService
+
     @Override
     public RoleDTO save(RoleDTO role) {
         return super.save(role.getId(),role);
