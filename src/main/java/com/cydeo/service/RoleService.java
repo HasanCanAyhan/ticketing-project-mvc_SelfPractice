@@ -8,4 +8,7 @@ import org.springframework.stereotype.Service;
 
 public interface RoleService extends CrudService<RoleDTO,Long>{
 
+    // some specific features refer to Role than you can add it here
+
+
 }
