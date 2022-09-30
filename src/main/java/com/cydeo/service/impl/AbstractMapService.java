@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class AbstractMapService <T,ID>{
+public abstract class AbstractMapService <T,ID>{ // Spring Boot design it
 
     public Map<ID,T> map = new HashMap<>(); //DB custom database
 
