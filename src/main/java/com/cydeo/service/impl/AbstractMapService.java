@@ -9,6 +9,8 @@ public abstract class AbstractMapService <T,ID>{
 
     public Map<ID,T> map = new HashMap<>(); //DB custom database
 
+    // those implementations are valid for child classes
+
     T save(ID id,T object){
         map.put(id,object);
         return object;
