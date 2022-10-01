@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationPropertiesBinding
 public class RoleDtoConverter implements Converter<String, RoleDTO> { //"2" dropdown sends it as String
-
+//                             view: th:value:${role.id},ex:for manager -->> roleDTO.id: "2", RoleDTO object
     RoleService roleService;
 
     public RoleDtoConverter(RoleService roleService) {
@@ -18,9 +18,10 @@ public class RoleDtoConverter implements Converter<String, RoleDTO> { //"2" drop
     }
 
     @Override
-    public RoleDTO convert(String source) {
-
+    public RoleDTO convert(String source) { // roleDto.id
+        //                 findById accepts Long
         return roleService.findById(Long.parseLong(source));
+                                    //based on the id
 
     }
 
