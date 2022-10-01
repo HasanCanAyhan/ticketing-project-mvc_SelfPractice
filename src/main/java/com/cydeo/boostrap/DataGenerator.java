@@ -34,7 +34,7 @@ public class DataGenerator implements CommandLineRunner { // give the run method
         RoleDTO managerRole = new RoleDTO(2L,"Manager");
         RoleDTO employeeRole = new RoleDTO(3L,"Employee");
 
-        roleService.save(adminRole);
+        roleService.save(adminRole); // Map<Long, RoleDto>
         roleService.save(managerRole);
         roleService.save(employeeRole);
 
@@ -55,7 +55,7 @@ public class DataGenerator implements CommandLineRunner { // give the run method
         UserDTO user8 = new UserDTO("Bill",
                 "Matt", "bill@cydeo.com", "Abc4", true, "8881239846", employeeRole, Gender.MALE);
 
-        userService.save(user1);
+        userService.save(user1); // Map<String, UserDTO>
         userService.save(user2);
         userService.save(user3);
         userService.save(user4);

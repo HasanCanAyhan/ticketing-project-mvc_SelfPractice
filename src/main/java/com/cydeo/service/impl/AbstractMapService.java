@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractMapService <T,ID>{ // Spring Boot design it
+    // abstract , because we don't need any object
+
+    // for RoleDto , new map
+    // for UserDto, nother new map
 
     public Map<ID,T> map = new HashMap<>(); //DB custom database
 

@@ -24,7 +24,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/create")
+    @GetMapping("/create") // end point -->> /user/create
     public String createUser(Model model){
         model.addAttribute("user", new UserDTO());
 
