@@ -44,6 +44,8 @@ public class ProjectController {
     }
 
 
+    //th:href="@{/student/welcome(id=3)}" . Request Param
+
     @GetMapping("/delete/{projectCode}")
     public String deleteProject(@PathVariable("projectCode") String projectCode){
 
