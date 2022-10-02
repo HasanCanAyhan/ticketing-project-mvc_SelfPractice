@@ -28,7 +28,7 @@ public class DataGenerator implements CommandLineRunner { // give the run method
 
         //This run method will execute FIRST BEFORE ANYTHING when you start the application
 
-        // create some rules and put it in the DB(map)
+        // create some roles and put it in the DB(map)
 
         RoleDTO adminRole = new RoleDTO(1L,"Admin");
         RoleDTO managerRole = new RoleDTO(2L,"Manager");
