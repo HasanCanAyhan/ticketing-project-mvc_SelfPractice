@@ -30,6 +30,7 @@ public class DataGenerator implements CommandLineRunner { // give the run method
 
         // create some roles and put it in the DB(map)
 
+        //RoleDTO because we will send it to view
         RoleDTO adminRole = new RoleDTO(1L,"Admin");
         RoleDTO managerRole = new RoleDTO(2L,"Manager");
         RoleDTO employeeRole = new RoleDTO(3L,"Employee");
