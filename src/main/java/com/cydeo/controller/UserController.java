@@ -52,29 +52,14 @@ public class UserController {
     }
 
 
-    /*
+
+
     //update button -->> GetMapping
     @GetMapping("/update/{username}")
-    public String editUser( @PathVariable("username") String username,Model model){
+    public String editUser(@PathVariable("username") String username, Model model) {
+
         //we need it : user object, roles, users
 
-        //user object ${user}
-        model.addAttribute("user", userService.findById(username));
-        //roles ${user}
-        model.addAttribute("roles", roleService.findAll() );
-
-        //users ${users}
-        model.addAttribute("users", userService.findAll());
-
-
-
-        return "/user/update";
-        //to determine what it is inside the view
-
-     */
-
-    @GetMapping("/update/{username}")
-    public String editUser(@PathVariable("username") String username, Model model) {
 
         model.addAttribute("user", userService.findById(username));
 
