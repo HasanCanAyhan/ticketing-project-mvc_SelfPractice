@@ -16,6 +16,14 @@ public class UserDtoConverter implements Converter<String, UserDTO> {
         this.userService = userService;
     }
 
+    /*
+
+    What dropdown returns to the backend?
+    It is returning id, but userdto doesn't accept role id, it accepts roledto object inside of it.
+    So we need to take the id from html and find the roledto based on id information,
+    and save that roledto with the new user/userdto
+
+     */
 
     @Override
     public UserDTO convert(String source) { // userName
