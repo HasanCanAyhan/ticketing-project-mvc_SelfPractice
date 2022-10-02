@@ -32,6 +32,7 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
+                                                 <!-- end point for post-->
                                     <form th:action="@{/user/create}" method="post" th:object="${user}">
                                         <div class="row">
                                             <div class="col-sm-6 col-md-6">
@@ -87,6 +88,7 @@
                                                     <label>Gender</label><br>
                                                     <label class="custom-control custom-radio custom-control-inline">
                                                         <input type="radio" name="radio-inline" th:value="MALE" th:field="*{gender}" class="custom-control-input"><span class="custom-control-label">Male</span>
+                                                                                        <!-- th:value should be whatever Gender Constant ex:MALE;FEMALE, not Male -->
                                                     </label>
                                                     <label class="custom-control custom-radio custom-control-inline">
                                                         <input type="radio" name="radio-inline" th:value="FEMALE" th:field="*{gender}" class="custom-control-input"><span class="custom-control-label">Female</span>
