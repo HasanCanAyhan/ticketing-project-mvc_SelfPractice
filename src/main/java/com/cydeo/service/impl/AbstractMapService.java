@@ -34,6 +34,10 @@ public abstract class AbstractMapService <T,ID>{ // Spring Boot design it
         map.remove(id);
     }
 
+    void update(ID id, T object) { // like save method
+        map.put(id, object);
+    }
+
 
 
 }

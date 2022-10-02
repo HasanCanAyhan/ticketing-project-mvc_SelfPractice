@@ -43,7 +43,7 @@ public class UserController {
         //model.addAttribute("user",new UserDTO());
         //model.addAttribute("roles", roleService.findAll() );
 
-        userService.save(user);
+        userService.save(user); // save and update
         //model.addAttribute("users", userService.findAll());
 
         //return "/user/create";
@@ -87,6 +87,16 @@ public class UserController {
 
 
     }
+
+    @PostMapping("/update")
+    public String updateUser(){
+
+        //update that user
+
+        return "redirect:/user/create";
+
+    }
+
 
 
 
