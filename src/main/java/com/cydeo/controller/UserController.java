@@ -98,7 +98,17 @@ public class UserController {
 
     }
 
+    //delete
 
+    //when you put something in the Html , that is Post
+
+    @GetMapping("/delete/{username}")
+    public String deleteUser(@PathVariable("username") String username){
+
+        userService.deleteById(username);
+
+        return "redirect:/user/create";
+    }
 
 
 }
