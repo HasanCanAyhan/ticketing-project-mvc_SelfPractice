@@ -89,9 +89,10 @@ public class UserController {
     }
 
     @PostMapping("/update")
-    public String updateUser(){
+    public String updateUser(@ModelAttribute("user") UserDTO user){
 
         //update that user
+        userService.update(user);
 
         return "redirect:/user/create";
 
