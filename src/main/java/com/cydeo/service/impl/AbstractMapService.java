@@ -9,7 +9,7 @@ public abstract class AbstractMapService <T,ID>{ // Spring Boot design it
     // abstract , because we don't need any object
 
     // for RoleDto , new map
-    // for UserDto, nother new map
+    // for UserDto, another new map
 
     public Map<ID,T> map = new HashMap<>(); //DB custom database
 
@@ -26,7 +26,7 @@ public abstract class AbstractMapService <T,ID>{ // Spring Boot design it
         return new ArrayList<>(map.values());
     }
 
-    T findById(ID id){
+    T findById(ID id){ // to select UserDto.RoleDto tc from DataBase
         return map.get(id);
     }
 
