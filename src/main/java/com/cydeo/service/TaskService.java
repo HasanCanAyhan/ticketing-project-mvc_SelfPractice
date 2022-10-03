@@ -4,4 +4,6 @@ import com.cydeo.dto.TaskDTO;
 
 //                                                       TaskId
 public interface TaskService extends CrudService<TaskDTO,Long>{
+
+
 }
