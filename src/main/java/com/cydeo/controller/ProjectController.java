@@ -81,10 +81,10 @@ public class ProjectController {
 
     }
 
-    @PostMapping("/update")
+    @PostMapping("/update") // save
     public String updateProject(@ModelAttribute("project") ProjectDTO project){
 
-        //update that user
+        //update that project
         projectService.update(project);
 
         return "redirect:/project/create";
