@@ -130,7 +130,7 @@
                                                 <td th:text="${task.taskSubject}"></td>
                                                 <td th:text="${task.assignedEmployee.firstName + ' ' + task.assignedEmployee.lastName}"></td>
                                                 <td th:text="${task.assignedDate}"></td>
-                                                <td ></td>
+                                                <td th:text="${task.taskStatus.value}"></td>
 
                                                 <td class="actions">
                                                     <a href="#" class="btn btn-warning rounded-0">Update</a>
