@@ -26,7 +26,7 @@ public class ProjectController {
     public String createProject(Model model){
 
         model.addAttribute("project", new ProjectDTO());
-        model.addAttribute("managers",userService.findAll());
+        model.addAttribute("managers",userService.findManagers()); // show assigned Manager
 
         model.addAttribute("projects",projectService.findAll()); // for projectList
 
@@ -53,6 +53,44 @@ public class ProjectController {
 
         return "redirect:/project/create";
     }
+
+    @GetMapping("/complete/{projectCode}")
+    public String completeProject(@PathVariable("projectCode") String projectCode){ // getMapping bcs give me the view!
+
+        //complete -> status to complete --> do i have service for that?
+        projectService.complete(projectService.findById(projectCode));
+
+        return "redirect:/project/create";
+    }
+
+
+    //update button -->> GetMapping
+    @GetMapping("/update/{projectCode}")
+    public String editProject(@PathVariable("projectCode") String projectCode, Model model) {
+
+
+        model.addAttribute("project", projectService.findById(projectCode));
+
+        model.addAttribute("managers",userService.findManagers());
+
+
+        model.addAttribute("projects",projectService.findAll());
+
+        return "/project/update";
+
+
+    }
+
+    @PostMapping("/update")
+    public String updateProject(@ModelAttribute("project") ProjectDTO project){
+
+        //update that user
+        projectService.update(project);
+
+        return "redirect:/project/create";
+
+    }
+
 
 
 }

@@ -5,5 +5,6 @@ import com.cydeo.dto.ProjectDTO;
 //                                                              projectCode is unique : String
 public interface ProjectService extends CrudService<ProjectDTO,String> {
 
+    void complete(ProjectDTO project);
 
 }
