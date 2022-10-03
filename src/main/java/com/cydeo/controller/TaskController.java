@@ -11,6 +11,8 @@ public class TaskController {
 
     @GetMapping("/create")
     public String createTask(Model model){
+        //show all projects
+        //show all employees
 
         return "task/create";
     }
