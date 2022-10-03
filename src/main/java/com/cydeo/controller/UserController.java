@@ -43,7 +43,7 @@ public class UserController {
         //model.addAttribute("user",new UserDTO());
         //model.addAttribute("roles", roleService.findAll() );
 
-        userService.save(user); // save and update
+        userService.save(user); // save
         //model.addAttribute("users", userService.findAll());
 
         //return "/user/create";
