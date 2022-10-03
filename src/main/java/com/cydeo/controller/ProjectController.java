@@ -28,7 +28,7 @@ public class ProjectController {
         model.addAttribute("project", new ProjectDTO());
         model.addAttribute("managers",userService.findAll());
 
-        model.addAttribute("projects",projectService.findAll());
+        model.addAttribute("projects",projectService.findAll()); // for projectList
 
         return "/project/create";
 
