@@ -38,9 +38,9 @@
                                                     <label>Project</label>
                                                     <select th:field="*{project}" name="project" class="custom-select"
                                                             readonly>
-                                                        <option th:each="project : ${projects}"
-                                                                th:value="${project.projectCode}"
-                                                                th:text="${project.projectCode+'-'+ project.projectName}"></option>
+                                                        <option
+                                                                th:value="${task.project.projectCode}"
+                                                                th:text="${task.project.projectCode+'-'+ task.project.projectName}"></option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -51,9 +51,9 @@
                                                     <label>Assigned Employee</label>
                                                     <select th:field="*{assignedEmployee}" name="assignedemployee"
                                                             class="custom-select" readonly>
-                                                        <option th:each="employee : ${employees}"
-                                                                th:value="${employee.userName}"
-                                                                th:text="${employee.firstName +' '+ employee.lastName}"></option>
+                                                        <option
+                                                                th:value="${task.assignedEmployee.userName}"
+                                                                th:text="${task.assignedEmployee.firstName +' '+ task.assignedEmployee.lastName}"></option>
                                                     </select>
                                                 </div>
                                             </div>
