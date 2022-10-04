@@ -99,11 +99,13 @@ public class ProjectController {
     @GetMapping("/manager/project-status")
     public String getProjectByManager(Model model){
 
+        //view need project attribute whoever login the application
         //we should see specific manager
         //we picked one manager
+        //                                          unique thing : username
         UserDTO manager = userService.findById("john@cydeo.com"); // in th reality Security it comes the from login page
 
-        
+
         List<ProjectDTO> projects = projectService.getCountedListOfProjectDTO(manager);
 
         model.addAttribute("projects",projects);
