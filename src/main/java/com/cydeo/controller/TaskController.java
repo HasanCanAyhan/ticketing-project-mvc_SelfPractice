@@ -6,10 +6,7 @@ import com.cydeo.service.TaskService;
 import com.cydeo.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -50,11 +47,11 @@ public class TaskController {
     }
 
     @PostMapping("/create")
-    public String insertUser(@ModelAttribute("task") TaskDTO task){
+    public String insertTask(@ModelAttribute("task") TaskDTO task){
         //show all projects
         //show all employees
 
-        task.setId(new Random().nextLong());
+
 
         taskService.save(task);
 
@@ -62,6 +59,32 @@ public class TaskController {
         return "redirect:/task/create";
 
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteTask(@PathVariable("id") Long id){
+
+        taskService.deleteById(id);
+
+        return "redirect:/task/create";
+    }
+
+
+    @GetMapping("/update/{taskId}")
+    public String editTask(@PathVariable("taskId") Long taskId ,Model model){
+
+        //whatever view needs
+
+        //except empty task object - empty form
+        model.addAttribute("task",taskService.findById(taskId));
+        model.addAttribute("projects" , projectService.findAll());
+        model.addAttribute("employees", userService.findEmployees());
+        model.addAttribute("tasks", taskService.findAll());
+
+
+        return "/task/update";
+    }
+
+
 
 
 

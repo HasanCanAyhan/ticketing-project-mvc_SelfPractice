@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 @Service
@@ -15,6 +16,11 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO,Long> implements
 
     @Override
     public TaskDTO save(TaskDTO task) {
+
+        if (task.getId() == null){
+            task.setId(UUID.randomUUID().getMostSignificantBits());// returns Long
+        }
+
         if (task.getTaskStatus() == null){
             task.setTaskStatus(Status.OPEN);
         }
@@ -37,12 +43,12 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO,Long> implements
     }
 
     @Override
-    public void deleteById(Long taskId) {
-         super.deleteById(taskId);
+    public void deleteById(Long id) {
+         super.deleteById(id);
     }
 
     @Override
-    public void update(TaskDTO object) {
-        super.update(object.getId(),object);
+    public void update(TaskDTO task) {
+        super.update(task.getId(),task);
     }
 }
