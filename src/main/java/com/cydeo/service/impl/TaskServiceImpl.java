@@ -2,9 +2,11 @@ package com.cydeo.service.impl;
 
 import com.cydeo.dto.TaskDTO;
 import com.cydeo.service.TaskService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TaskServiceImpl extends AbstractMapService<TaskDTO,Long> implements TaskService {
 
 
