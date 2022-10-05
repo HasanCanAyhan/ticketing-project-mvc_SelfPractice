@@ -59,6 +59,7 @@ public class ProjectController {
 
         //complete -> status to complete --> do i have service for that?
         projectService.complete(projectService.findById(projectCode));
+        //                       give me the project from DataBse, then change it`s status to COMPLETE
 
         return "redirect:/project/create";
     }
@@ -69,7 +70,7 @@ public class ProjectController {
     public String editProject(@PathVariable("projectCode") String projectCode, Model model) {
 
 
-        model.addAttribute("project", projectService.findById(projectCode));
+        model.addAttribute("project", projectService.findById(projectCode));//to show exact project from DataBase
 
         model.addAttribute("managers",userService.findManagers());
 
@@ -81,7 +82,7 @@ public class ProjectController {
 
     }
 
-    @PostMapping("/update") // save
+    @PostMapping("/update") // save button in the form
     public String updateProject(@ModelAttribute("project") ProjectDTO project){
 
         //update that project
