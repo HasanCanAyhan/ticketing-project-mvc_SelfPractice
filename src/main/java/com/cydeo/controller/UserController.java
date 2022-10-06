@@ -47,7 +47,7 @@ public class UserController {
         //model.addAttribute("roles", roleService.findAll() );
 
 
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()){ // page should not be changed
 
             model.addAttribute("roles", roleService.findAll());
 

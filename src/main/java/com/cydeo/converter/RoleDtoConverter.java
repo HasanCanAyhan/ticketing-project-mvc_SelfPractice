@@ -19,6 +19,12 @@ public class RoleDtoConverter implements Converter<String, RoleDTO> { //"2" drop
 
     @Override
     public RoleDTO convert(String source) { // roleDto.id -->> th:value : "2" returns String
+
+        if(source == null || source.equals("")){ // Select -> "" empty String
+            return null;
+        }
+
+
         //                 findById accepts Long
         return roleService.findById(Long.parseLong(source));
                                     //based on the id

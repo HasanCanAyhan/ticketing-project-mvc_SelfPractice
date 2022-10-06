@@ -35,10 +35,16 @@ public class UserDTO {
     @Pattern(regexp = "^\\d{10}$") // 10 characters
     private String phone;
 
-    //@NotNull
-    private RoleDTO role; // @NotNull bcs it is object
+    @NotNull
+    private RoleDTO role; // @NotNull bcs it is object, we can use @NotBlank this is for String
 
     //@NotNull
     private Gender gender;
+
+
+
+    //@NotNull
+    //private String confirmPassWord;
+
 
 }
