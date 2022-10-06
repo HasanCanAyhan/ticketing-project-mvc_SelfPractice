@@ -108,12 +108,16 @@
                                                 <div class="form-group">
                                                     <label for="repassword" class="col-form-label">Confirm Password</label>
                                                     <input id="repassword" type="password" placeholder="confirm your password" th:field="*{passWord}"  class="form-control">
+
+                                                   <!--
                                                     <div class="invalid-feedback" th:if="${#fields.hasErrors('confirmPassWord')}">
                                                         <ul>
                                                             <li th:each="err : ${#fields.errors('confirmPassWord')}"
                                                                 th:text="${err}"></li>
                                                         </ul>
                                                     </div>
+
+                                                    -->
                                                 </div>
                                             </div>
                                         </div>
