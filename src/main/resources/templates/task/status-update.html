@@ -38,6 +38,7 @@
                                                     <label>Project</label>
                                                     <select th:field="*{project}" name="project" class="custom-select"
                                                             readonly>
+                                                        <!-- th:each is deleted  --> <!-- task... is added   just to show project, not all projects-->
                                                         <option
                                                                 th:value="${task.project.projectCode}"
                                                                 th:text="${task.project.projectCode+'-'+ task.project.projectName}"></option>
@@ -51,6 +52,7 @@
                                                     <label>Assigned Employee</label>
                                                     <select th:field="*{assignedEmployee}" name="assignedemployee"
                                                             class="custom-select" readonly>
+                                                        <!-- th:each is deleted  --> <!-- task... is added   just to show assignedEmployee, not all employees -->
                                                         <option
                                                                 th:value="${task.assignedEmployee.userName}"
                                                                 th:text="${task.assignedEmployee.firstName +' '+ task.assignedEmployee.lastName}"></option>

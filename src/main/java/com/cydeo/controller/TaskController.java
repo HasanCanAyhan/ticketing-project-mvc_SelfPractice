@@ -128,7 +128,7 @@ public class TaskController {
     }
 
 
-    @GetMapping("/employee/edit/{id}")
+    @GetMapping("/employee/edit/{id}") // update button inside the pending task
     public String employeeEditTask(@PathVariable Long id,Model model){
 
         model.addAttribute("task", taskService.findById(id));
@@ -147,9 +147,9 @@ public class TaskController {
 
     // employee/update/{id}
 
-    @PostMapping("/employee/update/{id}")
+    @PostMapping("/employee/update/{id}") // save button inside status-update html
     public String employeeUpdateTask(TaskDTO task){
-        taskService.updateStatus(task);
+        taskService.updateStatus(task); // another logic because status should be new selected
 
         return "redirect:/task/employee/pending-tasks";
 
