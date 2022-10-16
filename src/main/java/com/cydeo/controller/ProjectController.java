@@ -142,7 +142,7 @@ public class ProjectController {
         //complete -> status to complete --> do i have service for that?
         projectService.complete(projectService.findById(projectCode));
 
-        return "redirect:/manager/project-status";
+        return "redirect:/project/manager/project-status";
     }
 
 
