@@ -136,6 +136,14 @@ public class ProjectController {
 
     }
 
+    @GetMapping("/manager/complete/{projectCode}") // inside project status complete button
+    public String managerCompleteProjectStatus(@PathVariable("projectCode") String projectCode){
+
+        //complete -> status to complete --> do i have service for that?
+        projectService.complete(projectService.findById(projectCode));
+
+        return "redirect:/manager/project-status";
+    }
 
 
 }
