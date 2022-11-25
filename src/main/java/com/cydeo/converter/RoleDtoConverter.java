@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationPropertiesBinding
 public class RoleDtoConverter implements Converter<String, RoleDTO> { //"2" dropdown sends it as String
 //                             view: th:value:${role.id},ex:for manager -->> roleDTO.id: "2", RoleDTO object
+
+    //Converter is an interface describing a Java class that can perform Object-To-String and vice versa conversion
     RoleService roleService;
 
     public RoleDtoConverter(RoleService roleService) {
