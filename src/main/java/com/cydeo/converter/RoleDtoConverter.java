@@ -20,7 +20,7 @@ public class RoleDtoConverter implements Converter<String, RoleDTO> { //"2" drop
     @Override
     public RoleDTO convert(String source) { // roleDto.id -->> th:value : "2" returns String
 
-        if(source == null || source.equals("")){ // Select -> "" empty String
+        if(source == null || source.equals("")){ // Select option in the user create page -> "" empty String
             return null;
         }
 
